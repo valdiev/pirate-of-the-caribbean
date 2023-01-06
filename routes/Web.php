@@ -2,6 +2,7 @@
 
 namespace routes;
 
+use controllers\LoginController;
 use controllers\SampleWebController;
 use routes\base\Route;
 use utils\Template;
@@ -26,6 +27,10 @@ class Web
         //        if (SessionHelpers::isLogin()) {
         //            Route::Add('/logout', [$main, 'home']);
         //        }
+        $login = new LoginController();
+        Route::Add('/login', [$login, 'index']);
+        Route::Add('/login/run', [$login, 'run']);
+        Route::Add('/logout', [$login, 'logout']);
     }
 }
 
