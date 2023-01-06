@@ -4,6 +4,7 @@ namespace routes;
 
 use controllers\LoginController;
 use controllers\SampleWebController;
+use controllers\Film;
 use routes\base\Route;
 use utils\Template;
 
@@ -22,6 +23,12 @@ class Web
         Route::Add('/about', function () {
             return Template::render('views/global/about.php');
         });
+
+
+        $film = new Film();
+        Route::Add('/film', [$film, 'liste']);
+        Route::Add('/film/{id}', [$film, 'film']);
+
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {
