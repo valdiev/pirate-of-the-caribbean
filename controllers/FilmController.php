@@ -56,4 +56,19 @@ class FilmController extends WebController
     {
         return $this->filmModele->removeFilm($id);
     }
+
+
+    function editFilm($id) : string
+    {
+        $leFilm = $this->filmModele->getByFilmId($id);
+        return Template::render(
+            "views/liste_films/edit_films.php",
+            array("leFilm" => $leFilm)
+        );
+    }
+
+    function runEditFilm($id) : string
+    {
+        return $this->filmModele->runEditFilm($id);
+    }
 }
