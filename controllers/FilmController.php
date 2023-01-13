@@ -40,10 +40,22 @@ class FilmController extends WebController
         // }
     }
 
-    function ajouter($page = 0): string
+    function ajouterFilm(): string
     {
         return Template::render(
             "views/liste_films/ajouter_films.php"
         );
+    }
+
+    function runAjouterFilm() : string
+    {
+        return $this->filmModele->creerFilm();
+    }
+
+    function removeFilm($id) : string
+    {
+        var_dump("tt");
+        die;
+//        return $this->filmModele->removeFilm();
     }
 }
