@@ -78,9 +78,9 @@ class FilmsModele extends SQL
         return $stmt->fetch();
     }
 
-//    public function removeFilm(){
-//        var_dump("tt");
-//        exit;
-//        return "test";
-//    }
+    public function removeFilm($id){
+        $stmt = $this->getPdo()->prepare("DELETE FROM movies WHERE id = ?");
+        $stmt->execute([$id]);
+        return header('location: /films');
+    }
 }
