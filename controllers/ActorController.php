@@ -12,6 +12,21 @@ class ActorController extends WebController
         $this->actorModele = new ActorsModele();
     }
 
+    function actor($id) {
+        $actorModele = new ActorsModele();
+        try{
+            $Actor = $actorModele->getByActorId($id);
+        }
+        catch (\Throwable $e){
+            var_dump($e);
+            exit;
+        }
+        return Template::render(
+            "views/liste_actors/liste_actors.php",
+            array("Actor" => $Actor)
+        );
+    }
+
     function liste($page = 0): string
     {
         $actors = $this->actorModele->liste(100, $page);

@@ -38,6 +38,7 @@ class Web
         Route::Add('/acteurs', [$actor, 'liste']);
         Route::Add('/acteurs/ajouter', [$actor, 'ajouterActeur']);
         Route::Add('/acteurs/runAjouterActeur', [$actor, 'runAjouterActeur']);
+        Route::Add('/acteurs/remove/{id}', [$actor, 'removeActeur']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {

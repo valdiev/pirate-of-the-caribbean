@@ -66,6 +66,14 @@ class ActorsModele extends SQL
         return header('location: /acteurs');
     }
 
+    public function getByActorId($actorId): Actor{
+        $query = "SELECT * FROM actors WHERE id = ?";
+        $stmt = SQL::getPdo()->prepare($query);
+        $stmt->execute([$actorId]);
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, Actor::class);
+        return $stmt->fetch();
+    }
+
     public function removeActor($id){
         $stmt = $this->getPdo()->prepare("DELETE FROM actors WHERE id = ?");
         $stmt->execute([$id]);
