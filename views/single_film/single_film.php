@@ -1,3 +1,5 @@
-<div class="container mt-5">
-    <h3>Single film</h3>
+<div class="card m-3 p-3">
+    <h3><?= $leFilm->getTitle() ?></h3>
+    <p><?= $leFilm->getDate() ?></p>
+    <p><?= $leFilm->getSynopsis() ?></p>
 </div>

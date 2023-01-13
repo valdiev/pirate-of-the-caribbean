@@ -14,12 +14,16 @@ class Film extends WebController
 
     function film($id) {
         $filmModele = new FilmsModele();
-
-        $leFilm = $filmModele->getByFilmId($id);
-
+        try{
+            $leFilm = $filmModele->getByFilmId($id);
+        }
+        catch (\Throwable $e){
+            var_dump($e);
+            exit;
+        }
         return Template::render(
-            "views/single_films/single_film.php",
-            array("filmInfos" => $leFilm)
+            "views/single_film/single_film.php",
+            array("leFilm" => $leFilm)
         );
     }
 
@@ -34,5 +38,12 @@ class Film extends WebController
         } else {
             header('location: /');
         }
+    }
+
+    function ajouter($page = 0): string
+    {
+        return Template::render(
+            "views/liste_films/ajouter_films.php"
+        );
     }
 }

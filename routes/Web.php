@@ -27,6 +27,7 @@ class Web
 
         $film = new Film();
         Route::Add('/film', [$film, 'liste']);
+        Route::Add('/film/ajouter', [$film, 'ajouter']);
         Route::Add('/film/{id}', [$film, 'film']);
 
 
