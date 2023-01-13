@@ -26,8 +26,8 @@ class Web
 
 
         $film = new Film();
-        Route::Add('/film', [$film, 'liste']);
-        Route::Add('/film/{id}', [$film, 'film']);
+        Route::Add('/films', [$film, 'liste']);
+        Route::Add('/films/{id}', [$film, 'film']);
 
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
