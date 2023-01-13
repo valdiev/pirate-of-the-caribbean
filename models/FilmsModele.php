@@ -22,11 +22,14 @@ class FilmsModele extends SQL
     public function liste(int $limit = PHP_INT_MAX, int $page = 0): array
     {
         $query = "SELECT * FROM movies LIMIT :limit,:offset;";
+        $query2 = "SELECT * FROM movies_images LIMIT :limit,:offset;";
 
         $stmt = SQL::getPdo()->prepare($query);
+        $stmt2 = SQL::getPdo()->prepare($query2);
         $stmt->execute([":limit" => $limit * $page, ":offset" => $limit]);
-
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, Film::class);
+        $stmt2->execute([":limit" => $limit * $page, ":offset" => $limit]);
+        $arrayFilm = [$stmt->fetchAll(\PDO::FETCH_CLASS, Film::class),$stmt2->fetchAll(\PDO::FETCH_CLASS, Film::class)];
+        return $arrayFilm;
     }
 
     /**
