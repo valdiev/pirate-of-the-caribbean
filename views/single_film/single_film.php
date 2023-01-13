@@ -1,6 +1,6 @@
 <?php if ($_SESSION) {
-    echo '<a href="/films/remove/<?= $leFilm->getId() ?>">Remove film</a><br>';
-    echo '<a href="/films/edit/<?= $leFilm->getId() ?>">Edit film</a>';
+    echo '<a href="/films/remove/' . $leFilm->getId() . '">Remove film</a><br>';
+    echo '<a href="/films/edit/' . $leFilm->getId() . '">Edit film</a>';
 }
 ?>
 <div class="card m-3 p-3">

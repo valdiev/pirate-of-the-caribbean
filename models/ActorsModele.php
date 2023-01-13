@@ -79,4 +79,16 @@ class ActorsModele extends SQL
         $stmt->execute([$id]);
         return header('location: /acteurs');
     }
+
+    public function runEditActor($id){
+
+        $firstName=$_POST['firstNameActor'];
+        $lastName=$_POST['lastNameActor'];
+
+        $stmt = $this->getPdo()->prepare("UPDATE actors SET firstname = '$firstName', lastname = '$lastName' WHERE id = ?");
+        $stmt->execute([$id]);
+
+        return header('location: /acteurs');
+
+    }
 }

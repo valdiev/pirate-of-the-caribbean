@@ -47,13 +47,27 @@ class ActorController extends WebController
         );
     }
 
-    function runAjouterActeur() : string
+    function runAddActeur() : string
     {
         return $this->actorModele->creerActeur();
     }
 
-    function removeActeur($id) : string
+    function removeActor($id) : string
     {
         return $this->actorModele->removeActor($id);
+    }
+
+    function editActor($id) : string
+    {
+        $Actor = $this->actorModele->getByActorId($id);
+        return Template::render(
+            "views/liste_actors/edit_actors.php",
+            array("Actor" => $Actor)
+        );
+    }
+
+    function runEditActor($id) : string
+    {
+        return $this->actorModele->runEditActor($id);
     }
 }

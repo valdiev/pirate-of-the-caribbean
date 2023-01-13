@@ -1,4 +1,4 @@
-<form name="form1" method="post" action="runAjouterActeur">
+<form name="form1" method="post" action="runAddActeur">
     <label for="firstNameActor">Prénom</label>
     <input type="text" id="firstNameActor" name="firstNameActor"><br><br>
     <label for="lastNameActor">Nom de famille</label>

@@ -39,8 +39,10 @@ class Web
         $actor = new ActorController();
         Route::Add('/acteurs', [$actor, 'liste']);
         Route::Add('/acteurs/ajouter', [$actor, 'ajouterActeur']);
-        Route::Add('/acteurs/runAjouterActeur', [$actor, 'runAjouterActeur']);
-        Route::Add('/acteurs/remove/{id}', [$actor, 'removeActeur']);
+        Route::Add('/acteurs/runAddActeur', [$actor, 'runAddActeur']);
+        Route::Add('/acteurs/remove/{id}', [$actor, 'removeActor']);
+        Route::Add('/acteurs/edit/{id}/runEditActor', [$actor, 'runEditActor']);
+        Route::Add('/acteurs/edit/{id}', [$actor, 'editActor']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {
