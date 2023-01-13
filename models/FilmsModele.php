@@ -28,7 +28,10 @@ class FilmsModele extends SQL
         $stmt2 = SQL::getPdo()->prepare($query2);
         $stmt->execute([":limit" => $limit * $page, ":offset" => $limit]);
         $stmt2->execute([":limit" => $limit * $page, ":offset" => $limit]);
-        $arrayFilm = [$stmt->fetchAll(\PDO::FETCH_CLASS, Film::class),$stmt2->fetchAll(\PDO::FETCH_CLASS, Film::class)];
+        $arrayFilm = [
+            $stmt->fetchAll(\PDO::FETCH_CLASS, Film::class),
+            $stmt2->fetchAll(\PDO::FETCH_CLASS, Film::class)
+        ];
         return $arrayFilm;
     }
 
@@ -67,9 +70,14 @@ class FilmsModele extends SQL
         $synopsis=$_POST['synopsis'];
         $date=$_POST['dateSortie'];
         $duration=$_POST['duration'];
+        $imageFilm=$_POST['imageFilm'];
         $stmt = $this->getPdo()->prepare("INSERT INTO movies (title, synopsis, date, duration) VALUES ('$title', '$synopsis', '$date', '$duration')");
         $stmt->execute();
         $stmt->fetch();
+        $lastId = intval($this->getPdo()->lastInsertId());
+        $stmt2 = $this->getPdo()->prepare("INSERT INTO movies_images (movie_id, url) VALUES ('$lastId', '$imageFilm')");
+        $stmt2->execute();
+        $stmt2->fetch();
         return header('location: /films');
     }
 
@@ -84,19 +92,22 @@ class FilmsModele extends SQL
     public function removeFilm($id){
         $stmt = $this->getPdo()->prepare("DELETE FROM movies WHERE id = ?");
         $stmt->execute([$id]);
+        $stmt2 = $this->getPdo()->prepare("DELETE FROM movies_images WHERE movie_id = '$id'");
+        $stmt2->execute();
+        $stmt2->fetch();
         return header('location: /films');
     }
 
     public function runEditFilm($id){
-
         $title=$_POST['titleMovie'];
         $synopsis=$_POST['synopsis'];
         $date=$_POST['dateSortie'];
         $duration=$_POST['duration'];
-
-        $stmt = $this->getPdo()->prepare("UPDATE movies SET title = '$title', synopsis = '$synopsis', date = '$date', duration = '$duration'  WHERE id = ?");
-        $stmt->execute([$id]);
-
+        $imageFilm=$_POST['imageFilm'];
+        $stmt = $this->getPdo()->prepare("UPDATE movies SET title = '$title', synopsis = '$synopsis', date = '$date', duration = '$duration'  WHERE id = '$id'");
+        $stmt2 = $this->getPdo()->prepare("UPDATE movies_images SET url = '$imageFilm' WHERE movie_id = '$id'");
+        $stmt->execute();
+        $stmt2->execute();
         return header('location: /films/' . $id);
 
     }
