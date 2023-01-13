@@ -35,7 +35,7 @@ class FilmController extends WebController
         // if($_SESSION) {
             return Template::render(
                 "views/liste_films/liste_films.php",
-                array("page" => $page, "films" => $films)
+                array("page" => $page, "films" => $films[0], "image" => $films[1])
             );
         // } else {
         //     header('location: /');
