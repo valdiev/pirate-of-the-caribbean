@@ -5,7 +5,7 @@ use controllers\base\WebController;
 use models\FilmsModele;
 use utils\Template;
 
-class Film extends WebController
+class FilmController extends WebController
 {
     function __construct()
     {

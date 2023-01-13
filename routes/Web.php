@@ -4,7 +4,7 @@ namespace routes;
 
 use controllers\LoginController;
 use controllers\SampleWebController;
-use controllers\Film;
+use controllers\FilmController;
 use routes\base\Route;
 use utils\Template;
 
@@ -25,7 +25,7 @@ class Web
         });
 
 
-        $film = new Film();
+        $film = new FilmController();
         Route::Add('/films', [$film, 'liste']);
         Route::Add('/films/ajouter', [$film, 'ajouter']);
         Route::Add('/films/{id}', [$film, 'film']);
