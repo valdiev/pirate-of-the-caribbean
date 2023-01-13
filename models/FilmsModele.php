@@ -83,4 +83,18 @@ class FilmsModele extends SQL
         $stmt->execute([$id]);
         return header('location: /films');
     }
+
+    public function runEditFilm($id){
+
+        $title=$_POST['titleMovie'];
+        $synopsis=$_POST['synopsis'];
+        $date=$_POST['dateSortie'];
+        $duration=$_POST['duration'];
+
+        $stmt = $this->getPdo()->prepare("UPDATE movies SET title = '$title', synopsis = '$synopsis', date = '$date', duration = '$duration'  WHERE id = ?");
+        $stmt->execute([$id]);
+
+        return header('location: /films/' . $id);
+
+    }
 }

@@ -14,8 +14,9 @@
         <a class="navbar-brand" href="/">Mini MVC Sample</a>
         <ul class="nav nav-pills">
             <?php
+            echo '<li class="nav-item"><a href="./films" class="nav-link">Liste Films</a></li>';
+            echo '<li class="nav-item"><a href="./acteurs" class="nav-link">Liste Acteurs</a></li>';
             if ($_SESSION) {
-                echo '<li class="nav-item"><a href="./film" class="nav-link">Liste Films</a></li>';
                 echo '<li class="nav-item"><a href="./logout" class="nav-link">Logout</a></li>';
             }
             else

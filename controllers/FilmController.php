@@ -3,6 +3,7 @@ namespace controllers;
 
 use controllers\base\WebController;
 use models\FilmsModele;
+use models\MovieImageModele;
 use utils\Template;
 
 class FilmController extends WebController
@@ -10,12 +11,13 @@ class FilmController extends WebController
     function __construct()
     {
         $this->filmModele = new FilmsModele();
+        $this->MovieImageModele = new MovieImageModele();
     }
 
     function film($id) {
-        $filmModele = new FilmsModele();
         try{
-            $leFilm = $filmModele->getByFilmId($id);
+            $leFilm = $this->filmModele->getByFilmId($id);
+            $image = $this->MovieImageModele->getByImageId($id);
         }
         catch (\Throwable $e){
             var_dump($e);
@@ -23,7 +25,7 @@ class FilmController extends WebController
         }
         return Template::render(
             "views/single_film/single_film.php",
-            array("leFilm" => $leFilm)
+            array("leFilm" => $leFilm, "image" => $image)
         );
     }
 
@@ -55,5 +57,20 @@ class FilmController extends WebController
     function removeFilm($id) : string
     {
         return $this->filmModele->removeFilm($id);
+    }
+
+
+    function editFilm($id) : string
+    {
+        $leFilm = $this->filmModele->getByFilmId($id);
+        return Template::render(
+            "views/liste_films/edit_films.php",
+            array("leFilm" => $leFilm)
+        );
+    }
+
+    function runEditFilm($id) : string
+    {
+        return $this->filmModele->runEditFilm($id);
     }
 }

@@ -1,5 +1,7 @@
-<a href="films/ajouter">Ajouter un film</a>
 <?php
+if ($_SESSION) {
+    echo '<a href="films/ajouter">Ajouter un film</a>';
+}
 /** @var Film[] $clients */
 foreach ($films as $f) { ?>
     <div class="card m-3 p-3">
