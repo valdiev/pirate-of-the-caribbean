@@ -26,13 +26,13 @@ class Film extends WebController
     function liste($page = 0): string
     {
         $films = $this->filmModele->liste(10, $page);
-        if($_SESSION) {
+        // if($_SESSION) {
             return Template::render(
                 "views/liste_films/liste_films.php",
                 array("page" => $page, "films" => $films)
             );
-        } else {
-            header('location: /');
-        }
+        // } else {
+        //     header('location: /');
+        // }
     }
 }
