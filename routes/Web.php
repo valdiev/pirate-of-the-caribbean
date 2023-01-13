@@ -2,6 +2,7 @@
 
 namespace routes;
 
+use controllers\ActorController;
 use controllers\LoginController;
 use controllers\SampleWebController;
 use controllers\FilmController;
@@ -30,6 +31,9 @@ class Web
         Route::Add('/films/ajouter', [$film, 'ajouter']);
         Route::Add('/films/{id}', [$film, 'film']);
 
+        $actor = new ActorController();
+        Route::Add('/acteurs', [$actor, 'liste']);
+        Route::Add('/acteurs/ajouter', [$actor, 'ajouter']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {
