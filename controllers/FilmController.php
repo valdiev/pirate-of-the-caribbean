@@ -54,8 +54,6 @@ class FilmController extends WebController
 
     function removeFilm($id) : string
     {
-        var_dump("tt");
-        die;
-//        return $this->filmModele->removeFilm();
+        return $this->filmModele->removeFilm($id);
     }
 }
