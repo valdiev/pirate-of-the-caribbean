@@ -33,10 +33,11 @@ class Web
         Route::Add('/films/runAjouterFilm', [$film, 'runAjouterFilm']);
         Route::Add('/films/remove/{id}', [$film, 'removeFilm']);
         Route::Add('/films/{id}', [$film, 'film']);
-
+        
         $actor = new ActorController();
         Route::Add('/acteurs', [$actor, 'liste']);
-        Route::Add('/acteurs/ajouter', [$actor, 'ajouter']);
+        Route::Add('/acteurs/ajouter', [$actor, 'ajouterActeur']);
+        Route::Add('/acteurs/runAjouterActeur', [$actor, 'runAjouterActeur']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {

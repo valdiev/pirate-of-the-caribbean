@@ -56,12 +56,19 @@ class ActorsModele extends SQL
      * @param Actor $unActeur
      * @return bool|string
      */
-    public function creerActeur(Actor $unActeur): bool|string
+    public function creerActeur()
     {
-        $query = "INSERT INTO actors (id, firstname, lastname) VALUES (null, ?, ?)";
-        $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$unActeur->getFirstName(), $unActeur->getLastName()]);
+        $firstName=$_POST['firstNameActor'];
+        $lastName=$_POST['lastNameActor'];
+        $stmt = $this->getPdo()->prepare("INSERT INTO actors (firstname, lastname) VALUES ('$firstName', '$lastName')");
+        $stmt->execute();
+        $stmt->fetch();
+        return header('location: /acteurs');
+    }
 
-        return $this->getPdo()->lastInsertId();
+    public function removeActor($id){
+        $stmt = $this->getPdo()->prepare("DELETE FROM actors WHERE id = ?");
+        $stmt->execute([$id]);
+        return header('location: /acteurs');
     }
 }
