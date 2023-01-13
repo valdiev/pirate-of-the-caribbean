@@ -58,13 +58,16 @@ class FilmsModele extends SQL
      * @param Film $unFilm
      * @return bool|string
      */
-    public function creerFilm(Film $unFilm): bool|string
+    public function creerFilm()
     {
-        $query = "INSERT INTO movies (id, title, synopsis, date, duration) VALUES (null, ?, ?, ?, ?)";
-        $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$unFilm->getTitle(), $unFilm->getSynopsis(), $unFilm->getDate(), $unFilm->getDuration()]);
-
-        return $this->getPdo()->lastInsertId();
+        $title=$_POST['titleMovie'];
+        $synopsis=$_POST['synopsis'];
+        $date=$_POST['dateSortie'];
+        $duration=$_POST['duration'];
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies (title, synopsis, date, duration) VALUES ('$title', '$synopsis', '$date', '$duration')");
+        $stmt->execute();
+        $stmt->fetch();
+        return header('location: /films');
     }
 
     public function getByFilmId($filmId): Film{
@@ -74,4 +77,10 @@ class FilmsModele extends SQL
         $stmt->setFetchMode(\PDO::FETCH_CLASS, Film::class);
         return $stmt->fetch();
     }
+
+//    public function removeFilm(){
+//        var_dump("tt");
+//        exit;
+//        return "test";
+//    }
 }

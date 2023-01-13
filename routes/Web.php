@@ -26,8 +26,11 @@ class Web
 
 
         $film = new FilmController();
+
         Route::Add('/films', [$film, 'liste']);
-        Route::Add('/films/ajouter', [$film, 'ajouter']);
+        Route::Add('/films/ajouter', [$film, 'ajouterFilm']);
+        Route::Add('/films/runAjouterFilm', [$film, 'runAjouterFilm']);
+        Route::Add('/films/remove/{id}', [$film, 'removeFilm']);
         Route::Add('/films/{id}', [$film, 'film']);
 
 
