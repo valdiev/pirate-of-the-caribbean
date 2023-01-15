@@ -1,6 +1,7 @@
 <?php
 namespace models\classes;
 
+
 class Actor
 {
     private string $id;
