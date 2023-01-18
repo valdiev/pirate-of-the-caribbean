@@ -62,9 +62,10 @@ class ActorController extends WebController
     {
         $Actor = $this->actorModele->getByActorId($id);
         $movies = $this->actorModele->listMovie();
+        $arrayMovieActors = $this->actorModele->listMovieActors();
         return Template::render(
             "views/liste_actors/edit_actors.php",
-            array("Actor" => $Actor, "movies" => $movies)
+            array("Actor" => $Actor, "movies" => $movies, "arrayMovieActors" => $arrayMovieActors)
         );
     }
 

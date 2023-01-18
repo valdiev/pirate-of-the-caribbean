@@ -96,12 +96,13 @@ class ActorsModele extends SQL
 
         $stmt = $this->getPdo()->prepare("UPDATE actors SET firstname = '$firstName', lastname = '$lastName' WHERE id = ?");
         $stmt->execute([$id]);
-        $lastId = intval($this->getPdo()->lastInsertId());
-//        foreach($_POST['movies'] as $movie) {
-//            $stmt = $this->getPdo()->prepare("UPDATE actors_movies SET actors_id = '$lastId', lastname = '$movie' WHERE actors_id = ?");
-//            $stmt->execute();
-//            $stmt->fetch();
-//        }
+        $stmt2 = $this->getPdo()->prepare("DELETE FROM actors_movies WHERE actors_id = ?");
+        $stmt2->execute([$id]);
+        foreach($_POST['movies'] as $movie) {
+            $stmt = $this->getPdo()->prepare("INSERT INTO actors_movies (actors_id, movies_id) VALUES (?, '$movie')");
+            $stmt->execute([$id]);
+            $stmt->fetch();
+        }
         return header('location: /acteurs');
     }
 

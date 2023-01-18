@@ -95,6 +95,9 @@ class FilmsModele extends SQL
         $stmt2 = $this->getPdo()->prepare("DELETE FROM movies_images WHERE movie_id = '$id'");
         $stmt2->execute();
         $stmt2->fetch();
+        $stmt3 = $this->getPdo()->prepare("DELETE FROM actors_movies WHERE movies_id = '$id'");
+        $stmt3->execute();
+        $stmt3->fetch();
         return header('location: /films');
     }
 
