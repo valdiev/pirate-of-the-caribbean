@@ -7,6 +7,7 @@ class Actor
     private string $id;
     private string $firstname;
     private string $lastname;
+    private string $charactername;
 
 
     /**
@@ -64,6 +65,22 @@ class Actor
     public function setLastName(string $lastname): void
     {
         $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCharacterName(): string
+    {
+        return $this->charactername;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setCharacterName(string $charactername): void
+    {
+        $this->charactername = $charactername;
     }
 
 }
