@@ -61,7 +61,15 @@ class ActorsModele extends SQL
     {
         $firstName=$_POST['firstNameActor'];
         $lastName=$_POST['lastNameActor'];
-        $stmt = $this->getPdo()->prepare("INSERT INTO actors (firstname, lastname) VALUES ('$firstName', '$lastName')");
+        $characterName=$_POST['characterName'];
+        $mainCharacter=$_POST['mainCharacter'];
+
+        if ($mainCharacter) {
+            $stmt = $this->getPdo()->prepare("INSERT INTO actors (firstname, lastname, charactername, mainCharacter) VALUES ('$firstName', '$lastName', '$characterName', true)");
+        } else {
+            $stmt = $this->getPdo()->prepare("INSERT INTO actors (firstname, lastname, charactername, mainCharacter) VALUES ('$firstName', '$lastName', '$characterName', false)");
+        }
+
         $stmt->execute();
         $stmt->fetch();
         $lastId = intval($this->getPdo()->lastInsertId());
@@ -93,8 +101,14 @@ class ActorsModele extends SQL
 
         $firstName=$_POST['firstNameActor'];
         $lastName=$_POST['lastNameActor'];
-
-        $stmt = $this->getPdo()->prepare("UPDATE actors SET firstname = '$firstName', lastname = '$lastName' WHERE id = ?");
+        $characterName=$_POST['characterName'];
+        $mainCharacter=$_POST['mainCharacter'];
+        if ($mainCharacter) {
+            $stmt = $this->getPdo()->prepare("UPDATE actors SET firstname = '$firstName', lastname = '$lastName', charactername = '$characterName', maincharacter = true WHERE id = ?");
+        }
+        else {
+            $stmt = $this->getPdo()->prepare("UPDATE actors SET firstname = '$firstName', lastname = '$lastName', charactername = '$characterName', maincharacter = false WHERE id = ?");
+        }
         $stmt->execute([$id]);
         $stmt2 = $this->getPdo()->prepare("DELETE FROM actors_movies WHERE actors_id = ?");
         $stmt2->execute([$id]);
