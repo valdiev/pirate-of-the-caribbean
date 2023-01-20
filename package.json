@@ -1,0 +1,23 @@
+{
+  "name": "pirate-of-the-caribbean",
+  "version": "1.0.0",
+  "description": "Cette structure est réalisée à des fins pédagogiques. Elle est un intermédiaire permettant d'introduire les concepts du framework Laravel sur des bases de développement PHP connu.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass ./public/style/main.scss ./public/style/main.css --watch --no-source-map",
+    "build": "sass ./public/style/main.scss ./public/style/main.css --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valdiev/pirate-of-the-caribbean.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valdiev/pirate-of-the-caribbean/issues"
+  },
+  "homepage": "https://github.com/valdiev/pirate-of-the-caribbean#readme",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
