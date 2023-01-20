@@ -1,4 +1,3 @@
-<div class="progress"></div>
 <section class="listFilm">
     <div class="background"></div>
     <div class="progress"></div>

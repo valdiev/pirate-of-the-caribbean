@@ -9,19 +9,23 @@
 </head>
 
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand" href="/">Mini MVC Sample</a>-->
-<!--        <ul class="nav nav-pills">-->
-<!--            --><?php
-//            echo '<li class="nav-item"><a href="/films" class="nav-link">Liste Films</a></li>';
-//            echo '<li class="nav-item"><a href="/acteurs" class="nav-link">Liste Acteurs</a></li>';
-//            if ($_SESSION) {
-//                echo '<li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>';
-//            }
-//            else
-//             echo'<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>';
-//            ?>
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
+<nav class="header">
+    <div class="header_logo">
+        <a href="/">
+            <h1>Pirates des caraibes</h1>
+        </a>
+    </div>
+    <div class="header_menu">
+        <ul class="menu">
+            <?php
+            echo '<li class="nav-item"><a href="/films" class="nav-link">Liste Films</a></li>';
+            echo '<li class="nav-item"><a href="/acteurs" class="nav-link">Liste Acteurs</a></li>';
+            if ($_SESSION) {
+                echo '<li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>';
+            }
+            else
+             echo'<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>';
+            ?>
+        </ul>
+    </div>
+</nav>

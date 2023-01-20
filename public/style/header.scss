@@ -1,0 +1,38 @@
+.header{
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  padding: 10px 50px;
+  background-color: transparent;
+  &_logo{
+    a{
+      text-decoration: none;
+      color: white;
+      h1{
+        font-family: "Pices of Eight", sans-serif;
+        font-size: 3rem;
+      }
+    }
+  }
+  &_menu{
+    .menu{
+      display: flex;
+      padding: 0;
+      list-style-type: none;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 0;
+      li{
+        a{
+          font-family: "Pices of Eight", sans-serif;
+          color: white;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
