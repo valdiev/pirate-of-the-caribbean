@@ -51,7 +51,7 @@
       position: relative;
       color: white;
       margin-bottom: 5rem;
-      font-size: 2rem;
+      font-size: 3rem;
       font-family: 'Poppins', sans-serif;
     }
     .movies{
@@ -84,12 +84,15 @@
           transition: .5s all ease;
           h3{
             color: white;
+            font-size: 2.5rem;
           }
           p{
             color: white;
+            font-size: 1.5rem;
           }
           a{
             color: white;
+            font-size: 1.5rem;
           }
         }
         &:hover{

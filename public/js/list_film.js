@@ -1,6 +1,8 @@
-var offsetStart = 0;
-var offsetEnd = 0;
+if(document.querySelector(".listFilm")) {
+    var offsetStart = 0;
+    var offsetEnd = 0;
 
-window.addEventListener('scroll', () => {
-    document.documentElement.style.setProperty('--scroll', ( window.pageYOffset - offsetStart ) / ( document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight ));
-}, false);
+    window.addEventListener('scroll', () => {
+        document.documentElement.style.setProperty('--scroll', (window.pageYOffset - offsetStart) / (document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight));
+    }, false);
+}
