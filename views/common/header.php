@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/style/main.css">
 </head>
-
-<body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
+<?php $path = $_SERVER['REQUEST_URI']; ?>
+<body class="<?= str_replace("/", "", $path); ?>">
 <nav class="header">
     <div class="header_logo">
         <a href="/">

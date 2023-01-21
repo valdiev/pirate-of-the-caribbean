@@ -397,6 +397,10 @@
   opacity: 1;
 }
 
+body.films {
+  background-color: #000;
+}
+
 .listFilm {
   animation: opacityScroll 1s linear;
   opacity: 1;
