@@ -43,6 +43,269 @@
   font-size: 2.5rem;
 }
 
+.listActors {
+  position: relative;
+  overflow: hidden;
+}
+.listActors_header {
+  width: 100vw;
+  height: 100vh;
+}
+.listActors_header_image {
+  width: 100%;
+  height: 100%;
+}
+.listActors_header_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.listActors_slider {
+  position: absolute;
+  display: flex;
+  inset: 0;
+}
+.listActors_slider input[type=radio] {
+  opacity: 0;
+}
+.listActors_slider .slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 1600ms;
+  transition: -webkit-transform 1600ms, transform 1600ms;
+  color: white;
+}
+.listActors_slider .slider .actors {
+  padding: 15rem;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
+}
+.listActors_slider .slide1 {
+  left: 0;
+}
+.listActors_slider .slide2 {
+  left: 100%;
+}
+.listActors_slider .slide3 {
+  left: 200%;
+}
+.listActors_slider .slide4 {
+  left: 300%;
+}
+.listActors_slider .slide5 {
+  left: 400%;
+}
+.listActors_slider .slide6 {
+  left: 500%;
+}
+.listActors_slider .slide7 {
+  left: 600%;
+}
+.listActors_slider .slide8 {
+  left: 700%;
+}
+.listActors_slider .slide9 {
+  left: 800%;
+}
+.listActors_slider .slide10 {
+  left: 900%;
+}
+.listActors_slider .slide11 {
+  left: 1000%;
+}
+.listActors_slider .slide12 {
+  left: 1100%;
+}
+.listActors_slider .slide13 {
+  left: 1200%;
+}
+.listActors_slider .slider > div {
+  text-align: center;
+}
+.listActors_slider .slider h2 {
+  color: #FFF;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 45px;
+  line-height: 120%;
+  opacity: 0;
+  -webkit-transform: translateX(500px);
+  transform: translateX(500px);
+}
+.listActors_slider .slider .button {
+  display: inline-block;
+  padding: 5px 50px;
+  font-size: 15px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #FFF;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  -webkit-transform: translateX(-500px);
+  transform: translateX(-500px);
+}
+.listActors_slider .slider h2, .listActors_slider .slider .button {
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1s; /* Safari */
+  transition-delay: 1s;
+}
+.listActors_slider .control {
+  position: absolute;
+  top: 50%;
+  z-index: 55;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+}
+.listActors_slider .control label {
+  z-index: 0;
+  display: none;
+  text-align: center;
+  line-height: 50px;
+  font-size: 50px;
+  color: #FFF;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.listActors_slider .control label:hover {
+  opacity: 1;
+}
+.listActors_slider .next {
+  right: 3rem;
+}
+.listActors_slider .next img {
+  width: 100%;
+}
+.listActors_slider .previous {
+  left: 3rem;
+}
+.listActors_slider .previous img {
+  width: 100%;
+  transform: rotate(180deg);
+}
+.listActors_slider .slide-radio1:checked ~ .next .numb2,
+.listActors_slider .slide-radio2:checked ~ .next .numb3,
+.listActors_slider .slide-radio2:checked ~ .previous .numb1,
+.listActors_slider .slide-radio3:checked ~ .next .numb4,
+.listActors_slider .slide-radio3:checked ~ .previous .numb2,
+.listActors_slider .slide-radio4:checked ~ .previous .numb3,
+.listActors_slider .slide-radio4:checked ~ .next .numb5,
+.listActors_slider .slide-radio5:checked ~ .previous .numb4,
+.listActors_slider .slide-radio5:checked ~ .next .numb6,
+.listActors_slider .slide-radio6:checked ~ .previous .numb5,
+.listActors_slider .slide-radio6:checked ~ .next .numb7,
+.listActors_slider .slide-radio7:checked ~ .previous .numb6,
+.listActors_slider .slide-radio7:checked ~ .next .numb8,
+.listActors_slider .slide-radio8:checked ~ .previous .numb7,
+.listActors_slider .slide-radio8:checked ~ .next .numb9,
+.listActors_slider .slide-radio9:checked ~ .previous .numb8,
+.listActors_slider .slide-radio9:checked ~ .next .numb10,
+.listActors_slider .slide-radio10:checked ~ .previous .numb9,
+.listActors_slider .slide-radio10:checked ~ .next .numb11,
+.listActors_slider .slide-radio11:checked ~ .previous .numb10,
+.listActors_slider .slide-radio11:checked ~ .next .numb12,
+.listActors_slider .slide-radio12:checked ~ .previous .numb11,
+.listActors_slider .slide-radio12:checked ~ .next .numb13,
+.listActors_slider .slide-radio13:checked ~ .previous .numb12 {
+  display: block;
+  z-index: 1;
+}
+.listActors_slider .slide-radio1:checked ~ .slider {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.listActors_slider .slide-radio2:checked ~ .slider {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.listActors_slider .slide-radio3:checked ~ .slider {
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+.listActors_slider .slide-radio4:checked ~ .slider {
+  -webkit-transform: translateX(-300%);
+  transform: translateX(-300%);
+}
+.listActors_slider .slide-radio5:checked ~ .slider {
+  -webkit-transform: translateX(-400%);
+  transform: translateX(-400%);
+}
+.listActors_slider .slide-radio6:checked ~ .slider {
+  -webkit-transform: translateX(-500%);
+  transform: translateX(-500%);
+}
+.listActors_slider .slide-radio7:checked ~ .slider {
+  -webkit-transform: translateX(-600%);
+  transform: translateX(-600%);
+}
+.listActors_slider .slide-radio8:checked ~ .slider {
+  -webkit-transform: translateX(-700%);
+  transform: translateX(-700%);
+}
+.listActors_slider .slide-radio9:checked ~ .slider {
+  -webkit-transform: translateX(-800%);
+  transform: translateX(-800%);
+}
+.listActors_slider .slide-radio10:checked ~ .slider {
+  -webkit-transform: translateX(-900%);
+  transform: translateX(-900%);
+}
+.listActors_slider .slide-radio11:checked ~ .slider {
+  -webkit-transform: translateX(-1000%);
+  transform: translateX(-1000%);
+}
+.listActors_slider .slide-radio12:checked ~ .slider {
+  -webkit-transform: translateX(-1100%);
+  transform: translateX(-1100%);
+}
+.listActors_slider .slide-radio13:checked ~ .slider {
+  -webkit-transform: translateX(-1200%);
+  transform: translateX(-1200%);
+}
+.listActors_slider .slide-radio1:checked ~ .slide1 h2,
+.listActors_slider .slide-radio1:checked ~ .slide1 .button,
+.listActors_slider .slide-radio2:checked ~ .slide2 h2,
+.listActors_slider .slide-radio2:checked ~ .slide2 .button,
+.listActors_slider .slide-radio3:checked ~ .slide3 h2,
+.listActors_slider .slide-radio3:checked ~ .slide3 .button,
+.listActors_slider .slide-radio4:checked ~ .slide4 h2,
+.listActors_slider .slide-radio4:checked ~ .slide4 .button,
+.listActors_slider .slide-radio5:checked ~ .slide5 h2,
+.listActors_slider .slide-radio5:checked ~ .slide5 .button,
+.listActors_slider .slide-radio6:checked ~ .slide6 h2,
+.listActors_slider .slide-radio6:checked ~ .slide6 .button,
+.listActors_slider .slide-radio7:checked ~ .slide7 h2,
+.listActors_slider .slide-radio7:checked ~ .slide7 .button,
+.listActors_slider .slide-radio8:checked ~ .slide8 h2,
+.listActors_slider .slide-radio8:checked ~ .slide8 .button,
+.listActors_slider .slide-radio9:checked ~ .slide9 h2,
+.listActors_slider .slide-radio9:checked ~ .slide9 .button,
+.listActors_slider .slide-radio10:checked ~ .slide10 h2,
+.listActors_slider .slide-radio10:checked ~ .slide10 .button,
+.listActors_slider .slide-radio11:checked ~ .slide11 h2,
+.listActors_slider .slide-radio11:checked ~ .slide11 .button,
+.listActors_slider .slide-radio12:checked ~ .slide12 h2,
+.listActors_slider .slide-radio12:checked ~ .slide12 .button,
+.listActors_slider .slide-radio13:checked ~ .slide13 h2,
+.listActors_slider .slide-radio13:checked ~ .slide13 .button {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .listFilm {
   animation: opacityScroll 1s linear;
   opacity: 1;
