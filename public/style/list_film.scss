@@ -1,6 +1,18 @@
 .listFilm{
   animation: opacityScroll 1s linear;
   opacity: 1;
+  &_addFilm{
+    position: fixed;
+    left: 50px;
+    top: 70px;
+    z-index: 101;
+    a{
+      font-family: "Pices of Eight", sans-serif;
+      color: white;
+      font-size: 2.5rem;
+      text-decoration: none;
+    }
+  }
   .background{
     position: fixed;
     z-index: 1;

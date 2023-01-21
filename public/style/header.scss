@@ -9,6 +9,8 @@
   padding: 10px 50px;
   background-color: transparent;
   &_logo{
+    //transform: translate(40vw, 40vh) scale(3);
+    //animation: logoAnimation 1s linear;
     a{
       text-decoration: none;
       color: white;
@@ -36,3 +38,10 @@
     }
   }
 }
+
+//@keyframes logoAnimation {
+//  to{
+//    scale: 1;
+//    transform: translate(0,0);
+//  }
+//}

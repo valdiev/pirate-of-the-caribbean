@@ -8,7 +8,23 @@ class Actor
     private string $firstname;
     private string $lastname;
     private string $charactername;
+    private string $image_acteur;
 
+    /**
+     * @return string
+     */
+    public function getImageActeur(): string
+    {
+        return $this->image_acteur;
+    }
+
+    /**
+     * @param string $image_acteur
+     */
+    public function setImageActeur(string $image_acteur): void
+    {
+        $this->image_acteur = $image_acteur;
+    }
 
     /**
      * Affichage des informations de base du client

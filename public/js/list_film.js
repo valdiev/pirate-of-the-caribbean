@@ -1,4 +1,4 @@
-if(document.querySelector(".listFilm")) {
+if(document.querySelector(".listFilm") || document.querySelector(".homepage")) {
     var offsetStart = 0;
     var offsetEnd = 0;
 

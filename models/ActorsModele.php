@@ -26,7 +26,6 @@ class ActorsModele extends SQL
 
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute([":limit" => $limit * $page, ":offset" => $limit]);
-
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Actor::class);
     }
 

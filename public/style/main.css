@@ -8,46 +8,29 @@
   padding: 0;
   font-size: 10px;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.header {
-  position: fixed;
-  z-index: 100;
-  inset: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  height: fit-content;
+.btn {
+  border: 1px solid white;
   padding: 10px 50px;
-  background-color: transparent;
-}
-.header_logo a {
   text-decoration: none;
   color: white;
-}
-.header_logo a h1 {
-  font-family: "Pices of Eight", sans-serif;
-  font-size: 3rem;
-}
-.header_menu .menu {
-  display: flex;
-  padding: 0;
-  list-style-type: none;
-  gap: 3rem;
+  width: 100%;
+  display: block;
   align-items: center;
-  margin-bottom: 0;
-}
-.header_menu .menu li a {
-  font-family: "Pices of Eight", sans-serif;
-  color: white;
-  font-size: 2.5rem;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2rem;
 }
 
 .homepage {
   position: relative;
   overflow: hidden;
+  height: 300vh;
 }
 .homepage_header {
+  position: fixed;
   width: 100vw;
   height: 100vh;
 }
@@ -60,7 +43,66 @@
   height: 100%;
   object-fit: cover;
 }
+.homepage_main {
+  position: fixed;
+  z-index: 2;
+  bottom: 5rem;
+  width: 120vw;
+  margin: 0 auto;
+  left: 5vw;
+  padding: 50px 0;
+  animation: scrollHomeMain 1s linear;
+}
+.homepage_main_container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.homepage_main_container .list_items {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.homepage_main_container .list_items h2 {
+  font-family: "Pices of Eight", sans-serif;
+  color: white;
+  font-size: 3rem;
+}
+.homepage_main_container .list_items a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.homepage_main_container hr {
+  border-radius: 25px;
+  height: 80px;
+  width: 3px;
+  color: white;
+  background-color: white;
+}
+.homepage_main .background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: rgba(0, 0, 0, 0.6);
+  filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
 
+@keyframes scrollHomeMain {
+  to {
+    transform: translateX(-100%);
+  }
+}
 .listActors {
   position: relative;
   overflow: hidden;
@@ -77,6 +119,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.listActors_addActor {
+  position: fixed;
+  left: 50px;
+  top: 70px;
+  z-index: 101;
+}
+.listActors_addActor a {
+  font-family: "Pices of Eight", sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
 }
 .listActors_slider {
   position: absolute;
@@ -109,6 +163,43 @@
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
+}
+.listActors_slider .slider .actors_name {
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1s; /* Safari */
+  transition-delay: 1s;
+  text-align: center;
+  -webkit-transform: translateX(500px);
+  transform: translateX(500px);
+  opacity: 0;
+}
+.listActors_slider .slider .actors_name h2 {
+  font-size: 5rem;
+  font-family: "Pices of Eight", sans-serif;
+  margin-bottom: 3rem;
+}
+.listActors_slider .slider .actors_films {
+  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+  transition: transform 800ms, opacity 800ms;
+  -webkit-transition-delay: 1s; /* Safari */
+  transition-delay: 1s;
+  text-align: center;
+  -webkit-transform: translateX(500px);
+  transform: translateX(500px);
+  opacity: 0;
+}
+.listActors_slider .slider .actors_films p {
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+.listActors_slider .slider .actors_films ul {
+  list-style-type: none;
+  padding: 0;
+}
+.listActors_slider .slider .actors_films ul li p {
+  font-size: 2rem;
+  text-decoration: none;
 }
 .listActors_slider .slide1 {
   left: 0;
@@ -149,37 +240,6 @@
 .listActors_slider .slide13 {
   left: 1200%;
 }
-.listActors_slider .slider > div {
-  text-align: center;
-}
-.listActors_slider .slider h2 {
-  color: #FFF;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 45px;
-  line-height: 120%;
-  opacity: 0;
-  -webkit-transform: translateX(500px);
-  transform: translateX(500px);
-}
-.listActors_slider .slider .button {
-  display: inline-block;
-  padding: 5px 50px;
-  font-size: 15px;
-  line-height: 30px;
-  text-decoration: none;
-  color: #FFF;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  -webkit-transform: translateX(-500px);
-  transform: translateX(-500px);
-}
-.listActors_slider .slider h2, .listActors_slider .slider .button {
-  -webkit-transition: opacity 800ms, -webkit-transform 800ms;
-  transition: transform 800ms, opacity 800ms;
-  -webkit-transition-delay: 1s; /* Safari */
-  transition-delay: 1s;
-}
 .listActors_slider .control {
   position: absolute;
   top: 50%;
@@ -201,16 +261,16 @@
 .listActors_slider .control label:hover {
   opacity: 1;
 }
-.listActors_slider .next {
+.listActors_slider .control.next {
   right: 3rem;
 }
-.listActors_slider .next img {
+.listActors_slider .control.next img {
   width: 100%;
 }
-.listActors_slider .previous {
+.listActors_slider .control.previous {
   left: 3rem;
 }
-.listActors_slider .previous img {
+.listActors_slider .control.previous img {
   width: 100%;
   transform: rotate(180deg);
 }
@@ -293,31 +353,44 @@
   -webkit-transform: translateX(-1200%);
   transform: translateX(-1200%);
 }
-.listActors_slider .slide-radio1:checked ~ .slide1 h2,
+.listActors_slider .slide-radio1:checked ~ .slide1 .actors_name,
+.listActors_slider .slide-radio1:checked ~ .slide1 .actors_films,
 .listActors_slider .slide-radio1:checked ~ .slide1 .button,
-.listActors_slider .slide-radio2:checked ~ .slide2 h2,
+.listActors_slider .slide-radio2:checked ~ .slide2 .actors_name,
+.listActors_slider .slide-radio2:checked ~ .slide2 .actors_films,
 .listActors_slider .slide-radio2:checked ~ .slide2 .button,
-.listActors_slider .slide-radio3:checked ~ .slide3 h2,
+.listActors_slider .slide-radio3:checked ~ .slide3 .actors_name,
+.listActors_slider .slide-radio3:checked ~ .slide3 .actors_films,
 .listActors_slider .slide-radio3:checked ~ .slide3 .button,
-.listActors_slider .slide-radio4:checked ~ .slide4 h2,
+.listActors_slider .slide-radio4:checked ~ .slide4 .actors_name,
+.listActors_slider .slide-radio4:checked ~ .slide4 .actors_films,
 .listActors_slider .slide-radio4:checked ~ .slide4 .button,
-.listActors_slider .slide-radio5:checked ~ .slide5 h2,
+.listActors_slider .slide-radio5:checked ~ .slide5 .actors_name,
+.listActors_slider .slide-radio5:checked ~ .slide5 .actors_films,
 .listActors_slider .slide-radio5:checked ~ .slide5 .button,
-.listActors_slider .slide-radio6:checked ~ .slide6 h2,
+.listActors_slider .slide-radio6:checked ~ .slide6 .actors_name,
+.listActors_slider .slide-radio6:checked ~ .slide6 .actors_films,
 .listActors_slider .slide-radio6:checked ~ .slide6 .button,
-.listActors_slider .slide-radio7:checked ~ .slide7 h2,
+.listActors_slider .slide-radio7:checked ~ .slide7 .actors_name,
+.listActors_slider .slide-radio7:checked ~ .slide7 .actors_films,
 .listActors_slider .slide-radio7:checked ~ .slide7 .button,
-.listActors_slider .slide-radio8:checked ~ .slide8 h2,
+.listActors_slider .slide-radio8:checked ~ .slide8 .actors_name,
+.listActors_slider .slide-radio8:checked ~ .slide8 .actors_films,
 .listActors_slider .slide-radio8:checked ~ .slide8 .button,
-.listActors_slider .slide-radio9:checked ~ .slide9 h2,
+.listActors_slider .slide-radio9:checked ~ .slide9 .actors_name,
+.listActors_slider .slide-radio9:checked ~ .slide9 .actors_films,
 .listActors_slider .slide-radio9:checked ~ .slide9 .button,
-.listActors_slider .slide-radio10:checked ~ .slide10 h2,
+.listActors_slider .slide-radio10:checked ~ .slide10 .actors_name,
+.listActors_slider .slide-radio10:checked ~ .slide10 .actors_films,
 .listActors_slider .slide-radio10:checked ~ .slide10 .button,
-.listActors_slider .slide-radio11:checked ~ .slide11 h2,
+.listActors_slider .slide-radio11:checked ~ .slide11 .actors_name,
+.listActors_slider .slide-radio11:checked ~ .slide11 .actors_films,
 .listActors_slider .slide-radio11:checked ~ .slide11 .button,
-.listActors_slider .slide-radio12:checked ~ .slide12 h2,
+.listActors_slider .slide-radio12:checked ~ .slide12 .actors_name,
+.listActors_slider .slide-radio12:checked ~ .slide12 .actors_films,
 .listActors_slider .slide-radio12:checked ~ .slide12 .button,
-.listActors_slider .slide-radio13:checked ~ .slide13 h2,
+.listActors_slider .slide-radio13:checked ~ .slide13 .actors_name,
+.listActors_slider .slide-radio13:checked ~ .slide13 .actors_films,
 .listActors_slider .slide-radio13:checked ~ .slide13 .button {
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -327,6 +400,18 @@
 .listFilm {
   animation: opacityScroll 1s linear;
   opacity: 1;
+}
+.listFilm_addFilm {
+  position: fixed;
+  left: 50px;
+  top: 70px;
+  z-index: 101;
+}
+.listFilm_addFilm a {
+  font-family: "Pices of Eight", sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
 }
 .listFilm .background {
   position: fixed;
@@ -442,4 +527,36 @@
   to {
     opacity: 0.8;
   }
+}
+.header {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  padding: 10px 50px;
+  background-color: transparent;
+}
+.header_logo a {
+  text-decoration: none;
+  color: white;
+}
+.header_logo a h1 {
+  font-family: "Pices of Eight", sans-serif;
+  font-size: 3rem;
+}
+.header_menu .menu {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 0;
+}
+.header_menu .menu li a {
+  font-family: "Pices of Eight", sans-serif;
+  color: white;
+  font-size: 2.5rem;
 }

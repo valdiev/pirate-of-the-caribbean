@@ -1,4 +1,9 @@
 <section class="listFilm">
+    <div class="listFilm_addFilm">
+        <?php if($_SESSION) { ?>
+            <a href="films/ajouter">Ajouter un film</a>
+        <?php } ?>
+    </div>
     <div class="background"></div>
     <div class="progress"></div>
     <div class="listFilm_header">
@@ -13,9 +18,6 @@
         <h2>Films</h2>
         <div class="movies">
             <?php
-    //        if ($_SESSION) {
-    //            echo '<a href="films/ajouter">Ajouter un film</a>';
-    //        }
             foreach ($films as $key=>$f) {?>
                 <article class="movies_card">
                     <div class="movies_card_image">
@@ -27,9 +29,17 @@
                     </div>
                     <div class="movies_card_info">
                         <h3><?= $f->generalInfo() ?></h3>
-                        <p class="small"><?= $f->descriptionInfo() ?></p>
+                        <p>Date de sortie : <?= $f->getDate() ?></p>
+                        <p class="small"><?= $f->getSynopsis() ?></p>
 
                         <a href="/films/<?= $f->getId() ?>">En savoir plus</a>
+
+
+                        <?php if($_SESSION) {
+                            echo '<a class="btn" href="/films/edit/' . $f->getId() . '">Edit film</a>';
+                            echo '<a class="btn" href="/films/remove/' . $f->getId() . '">Remove film</a>';
+                        } ?>
+
                     </div>
                 </article>
             <?php } ?>
