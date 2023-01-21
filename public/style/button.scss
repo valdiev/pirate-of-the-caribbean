@@ -1,0 +1,35 @@
+.pirate_button {
+    font-size: 2rem;
+    color: #000;
+    font-family: "Pices of Eight", sans-serif;
+    padding: 5px 20px;
+    min-width: 150px;
+    position: relative;
+    background-image: url(../img/paper.png);
+    background-size: cover;
+    background-position: top center;
+
+    &:hover {
+        &::after {
+            animation: rotate 1.4s linear infinite;
+        }
+    }
+
+    @keyframes rotate {
+        to{ transform: translate(50%, -50%) rotate(360deg); }
+    }
+
+    &::after {
+        content: '';
+        width: 40px;
+        aspect-ratio: 1;
+        background-image: url(../img/wheel_pirate.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+    }
+}

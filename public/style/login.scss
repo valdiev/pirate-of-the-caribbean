@@ -1,0 +1,51 @@
+body.login {
+    min-height: 100vh;
+    background-image: url(../img/black_pearl.jpeg);
+    background-size: cover;
+    background-position: center;
+
+    #login__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        &-form {
+            height: fit-content;
+            max-width: 500px;
+            margin-inline: auto;
+            padding: 30px;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+
+            h1 {
+                font-size: 1.8rem;
+                text-align: center;
+                width: 80%;
+                margin-inline: auto;
+            }
+
+            form {
+                text-align: center;
+                width: 60%;
+                margin-inline: auto;
+                label {
+                    display: block;
+                    font-size: 1.4rem;
+                    &:first-of-type {
+                        margin: 20px 0 5px;
+                    }
+                }
+                input {
+                    width: 100%;
+                    font-size: 1.2rem;
+                    padding: .5rem;
+
+                    &:last-of-type {
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}

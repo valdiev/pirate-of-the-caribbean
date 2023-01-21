@@ -564,3 +564,84 @@ body.films {
   color: white;
   font-size: 2.5rem;
 }
+
+body.login {
+  min-height: 100vh;
+  background-image: url(../img/black_pearl.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+body.login #login__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body.login #login__content-form {
+  height: fit-content;
+  max-width: 500px;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+body.login #login__content-form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+}
+body.login #login__content-form form {
+  text-align: center;
+  width: 60%;
+  margin-inline: auto;
+}
+body.login #login__content-form form label {
+  display: block;
+  font-size: 1.4rem;
+}
+body.login #login__content-form form label:first-of-type {
+  margin: 20px 0 5px;
+}
+body.login #login__content-form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+body.login #login__content-form form input:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.pirate_button {
+  font-size: 2rem;
+  color: #000;
+  font-family: "Pices of Eight", sans-serif;
+  padding: 5px 20px;
+  min-width: 150px;
+  position: relative;
+  background-image: url(../img/paper.png);
+  background-size: cover;
+  background-position: top center;
+}
+.pirate_button:hover::after {
+  animation: rotate 1.4s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+.pirate_button::after {
+  content: "";
+  width: 40px;
+  aspect-ratio: 1;
+  background-image: url(../img/wheel_pirate.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
