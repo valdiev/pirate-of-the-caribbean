@@ -34,12 +34,6 @@
 
                         <a href="/films/<?= $f->getId() ?>">En savoir plus</a>
 
-
-                        <?php if($_SESSION) {
-                            echo '<a class="btn" href="/films/edit/' . $f->getId() . '">Edit film</a>';
-                            echo '<a class="btn" href="/films/remove/' . $f->getId() . '">Remove film</a>';
-                        } ?>
-
                     </div>
                 </article>
             <?php } ?>
