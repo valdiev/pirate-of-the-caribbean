@@ -935,3 +935,60 @@ body.login #login__content-form form input:last-of-type {
 .editFilms_form form .form_films_item input {
   flex: 0 0 10%;
 }
+
+.galerie {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galerie_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.galerie_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.galerie_title {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galerie_title h1 {
+  position: relative;
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 10rem;
+  font-family: "Pices of Eight", sans-serif;
+}
+.galerie_list {
+  position: relative;
+  transform: translateY(140vh);
+}
+.galerie_list_container h2 {
+  position: relative;
+  color: white;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+.galerie_list_container_item {
+  display: flex;
+  gap: 3rem;
+}
+.galerie_list_container_item_indiv {
+  flex: 0 0 25%;
+  height: 300px;
+}
+.galerie_list_container_item_indiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

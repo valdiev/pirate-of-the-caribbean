@@ -3,6 +3,7 @@
 namespace routes;
 
 use controllers\ActorController;
+use controllers\GalerieController;
 use controllers\LoginController;
 use controllers\SampleWebController;
 use controllers\FilmController;
@@ -52,6 +53,10 @@ class Web
         Route::Add('/login', [$login, 'index']);
         Route::Add('/login/run', [$login, 'run']);
         Route::Add('/logout', [$login, 'logout']);
+
+
+        $galerie = new GalerieController();
+        Route::Add('/galerie', [$galerie, 'index']);
     }
 }
 
