@@ -560,6 +560,7 @@ body.films {
   margin-bottom: 0;
 }
 .header_menu .menu li a {
+  text-decoration: none;
   font-family: "Pices of Eight", sans-serif;
   color: white;
   font-size: 2.5rem;
@@ -623,6 +624,7 @@ body.login #login__content-form form input:last-of-type {
   background-image: url(../img/paper.png);
   background-size: cover;
   background-position: top center;
+  cursor: pointer;
 }
 .pirate_button:hover::after {
   animation: rotate 1.4s linear infinite;
@@ -644,4 +646,54 @@ body.login #login__content-form form input:last-of-type {
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
+}
+
+.formAddActor {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formAddActor_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.formAddActor_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formAddActor_form {
+  height: fit-content;
+  max-width: 500px;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: relative;
+}
+.formAddActor_form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+}
+.formAddActor_form form {
+  text-align: center;
+  width: 60%;
+  margin-inline: auto;
+}
+.formAddActor_form form label {
+  display: block;
+  font-size: 1.4rem;
+}
+.formAddActor_form form label:first-of-type {
+  margin: 20px 0 5px;
+}
+.formAddActor_form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
 }

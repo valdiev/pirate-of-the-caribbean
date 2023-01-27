@@ -8,7 +8,7 @@
     background-image: url(../img/paper.png);
     background-size: cover;
     background-position: top center;
-
+    cursor: pointer;
     &:hover {
         &::after {
             animation: rotate 1.4s linear infinite;
