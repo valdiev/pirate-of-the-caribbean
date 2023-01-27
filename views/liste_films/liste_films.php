@@ -18,6 +18,7 @@
         <h2>Films</h2>
         <div class="movies">
             <?php
+            // var_dump($relatedFilms);
             foreach ($films as $key=>$f) {?>
                 <article class="movies_card">
                     <a href="/films/<?= $f->getId() ?>">

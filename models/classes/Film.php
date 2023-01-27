@@ -8,6 +8,7 @@ class Film
     private string $synopsis;
     private string $date;
     private string $duration;
+    private string $video;
 
     /**
      * Retourne la liste des adresses du client
@@ -122,6 +123,22 @@ class Film
     public function setDuration(string $duration): void
     {
         $this->duration = $duration;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVideo(): string
+    {
+        return $this->video;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setVideo(string $video): void
+    {
+        $this->video = $video;
     }
 
 }

@@ -4,6 +4,7 @@ namespace controllers;
 use controllers\base\WebController;
 use models\FilmsModele;
 use models\MovieImageModele;
+use models\RelatedFilmModele;
 use utils\Template;
 
 class FilmController extends WebController
@@ -12,12 +13,14 @@ class FilmController extends WebController
     {
         $this->filmModele = new FilmsModele();
         $this->MovieImageModele = new MovieImageModele();
+        $this->RelatedFilmModele = new RelatedFilmModele();
     }
 
     function film($id) {
         try{
             $leFilm = $this->filmModele->getByFilmId($id);
             $image = $this->MovieImageModele->getByImageId($id);
+            $relatedFilms = $this->RelatedFilmModele->getRealtedFilms($id);
         }
         catch (\Throwable $e){
             var_dump($e);
@@ -25,7 +28,7 @@ class FilmController extends WebController
         }
         return Template::render(
             "views/single_film/single_film.php",
-            array("leFilm" => $leFilm, "image" => $image)
+            array("leFilm" => $leFilm, "image" => $image, "relatedFilms" => $relatedFilms[0], "relatedFilmsImage" => $relatedFilms[1])
         );
     }
 
