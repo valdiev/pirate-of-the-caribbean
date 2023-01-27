@@ -666,7 +666,8 @@ body.login #login__content-form form input:last-of-type {
 }
 .formAddActor_form {
   height: fit-content;
-  max-width: 500px;
+  width: 500px;
+  max-width: 80%;
   margin-inline: auto;
   padding: 30px;
   border-radius: 30px;
@@ -682,18 +683,255 @@ body.login #login__content-form form input:last-of-type {
 }
 .formAddActor_form form {
   text-align: center;
-  width: 60%;
+  width: 90%;
   margin-inline: auto;
 }
 .formAddActor_form form label {
   display: block;
   font-size: 1.4rem;
 }
-.formAddActor_form form label:first-of-type {
-  margin: 20px 0 5px;
-}
 .formAddActor_form form input {
   width: 100%;
   font-size: 1.2rem;
   padding: 0.5rem;
+}
+.formAddActor_form form .mainCharacter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  gap: 1rem;
+}
+.formAddActor_form form .mainCharacter input {
+  flex: 0 0 10%;
+}
+.formAddActor_form form .form_films {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formAddActor_form form .form_films_item {
+  display: flex;
+  gap: 1rem;
+}
+.formAddActor_form form .form_films_item input {
+  flex: 0 0 10%;
+}
+
+.editActors {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editActors_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.editActors_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.editActors_form {
+  height: fit-content;
+  max-width: 80%;
+  width: 500px;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: relative;
+}
+.editActors_form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.editActors_form form {
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+}
+.editActors_form form label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.editActors_form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.editActors_form form .mainCharacter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  gap: 1rem;
+}
+.editActors_form form .mainCharacter input {
+  flex: 0 0 10%;
+}
+.editActors_form form .form_films {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.editActors_form form .form_films_item {
+  display: flex;
+  gap: 1rem;
+}
+.editActors_form form .form_films_item input {
+  flex: 0 0 10%;
+}
+
+.formAddFilms {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formAddFilms_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.formAddFilms_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.formAddFilms_form {
+  height: fit-content;
+  width: 500px;
+  max-width: 80%;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: relative;
+}
+.formAddFilms_form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.formAddFilms_form form {
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+}
+.formAddFilms_form form label {
+  display: block;
+  font-size: 1.4rem;
+}
+.formAddFilms_form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.formAddFilms_form form textarea {
+  width: 100%;
+}
+.formAddFilms_form form .mainCharacter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.formAddFilms_form form .mainCharacter input {
+  flex: 0 0 10%;
+}
+.formAddFilms_form form .form_films {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formAddFilms_form form .form_films_item {
+  display: flex;
+  gap: 1rem;
+}
+.formAddFilms_form form .form_films_item input {
+  flex: 0 0 10%;
+}
+
+.editFilms {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editFilms_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.editFilms_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.editFilms_form {
+  height: fit-content;
+  width: 500px;
+  max-width: 80%;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: relative;
+}
+.editFilms_form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.editFilms_form form {
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+}
+.editFilms_form form label {
+  display: block;
+  font-size: 1.4rem;
+}
+.editFilms_form form textarea {
+  width: 100%;
+}
+.editFilms_form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.editFilms_form form .mainCharacter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.editFilms_form form .mainCharacter input {
+  flex: 0 0 10%;
+}
+.editFilms_form form .form_films {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.editFilms_form form .form_films_item {
+  display: flex;
+  gap: 1rem;
+}
+.editFilms_form form .form_films_item input {
+  flex: 0 0 10%;
 }

@@ -1,4 +1,4 @@
-.formAddActor{
+.editActors{
   height: 100vh;
   display: flex;
   align-items: center;
@@ -15,8 +15,8 @@
   }
   &_form{
     height: fit-content;
-    width: 500px;
     max-width: 80%;
+    width: 500px;
     margin-inline: auto;
     padding: 30px;
     border-radius: 30px;
@@ -28,6 +28,7 @@
       text-align: center;
       width: 80%;
       margin-inline: auto;
+      margin-bottom: 1rem;
     }
     form{
       text-align: center;
@@ -36,12 +37,14 @@
       label{
         display: block;
         font-size: 1.4rem;
+        margin-bottom: .5rem;
       }
       input{
         width: 100%;
         font-size: 1.2rem;
         padding: 0.5rem;
       }
+
       .mainCharacter{
         width: 100%;
         display: flex;
