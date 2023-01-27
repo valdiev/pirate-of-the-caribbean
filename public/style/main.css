@@ -483,22 +483,32 @@ body.films {
   flex: 0 0 30%;
   position: relative;
 }
+.listFilm_movies .movies_card a {
+  text-decoration: none;
+}
+.listFilm_movies .movies_card_image {
+  position: relative;
+  padding-top: 134%;
+}
 .listFilm_movies .movies_card_image img {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
 }
 .listFilm_movies .movies_card_info {
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
   position: absolute;
-  top: 50%;
+  top: 0;
   padding: 0 15px;
   height: 100%;
   inset: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
   opacity: 0;
   transition: 0.5s all ease;
+  padding: 2rem;
 }
 .listFilm_movies .movies_card_info h3 {
   color: white;
