@@ -1,6 +1,17 @@
-#single__film {
+.single__film {
     background-color: rgb(30, 30, 30);
-
+    &__btn{
+        position: fixed;
+        left: 50px;
+        top: 70px;
+        z-index: 101;
+        a {
+            font-family: "Pices of Eight", sans-serif;
+            color: white;
+            font-size: 2.5rem;
+            text-decoration: none;
+        }
+    }
     .single__film {
         margin-bottom: 8rem;
         &-video {
@@ -35,6 +46,28 @@
             }
         }
 
+    }
+    .comments{
+        padding: 0 50px 50px;
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        a{
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: underline;
+        }
+        ul{
+            margin-top: 2rem;
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            li{
+                color: #FFF;
+            }
+        }
     }
     .related__films {
         padding: 0 50px 50px;

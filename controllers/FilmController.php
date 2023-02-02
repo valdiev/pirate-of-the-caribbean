@@ -28,7 +28,7 @@ class FilmController extends WebController
         }
         return Template::render(
             "views/single_film/single_film.php",
-            array("leFilm" => $leFilm, "image" => $image, "relatedFilms" => $relatedFilms[0], "relatedFilmsImage" => $relatedFilms[1])
+            array("leFilm" => $leFilm[0], "comments" => $leFilm[1] , "image" => $image, "relatedFilms" => $relatedFilms[0], "relatedFilmsImage" => $relatedFilms[1])
         );
     }
 
@@ -57,6 +57,21 @@ class FilmController extends WebController
         return $this->filmModele->creerFilm();
     }
 
+    function comments($id): string
+    {
+        $leFilm = $this->filmModele->getByFilmId($id);
+        return Template::render(
+            "views/single_film/comments.php",
+            array("leFilm" => $leFilm[0][0])
+        );
+    }
+
+    function runComments($id) : string
+    {
+        return $this->filmModele->addComments($id);
+    }
+
+
     function removeFilm($id) : string
     {
         return $this->filmModele->removeFilm($id);
@@ -69,7 +84,7 @@ class FilmController extends WebController
         $image = $this->MovieImageModele->getByImageId($id);
         return Template::render(
             "views/liste_films/edit_films.php",
-            array("leFilm" => $leFilm, "image" => $image)
+            array("leFilm" => $leFilm[0][0], "image" => $image)
         );
     }
 

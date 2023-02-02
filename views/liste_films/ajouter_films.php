@@ -15,6 +15,8 @@
             <input type="text" id="duration" name="duration"><br><br>
             <label for="imageFilm">Image du film (url)</label>
             <input type="text" id="imageFilm" name="imageFilm"><br><br>
+            <label for="videoFilm">Video du film (url)</label>
+            <input type="text" id="videoFilm" name="videoFilm"><br><br>
             <button type="submit" class="pirate_button">Ajouter</button>
         </form>
     </div>
