@@ -71,7 +71,8 @@ class FilmsModele extends SQL
         $date=$_POST['dateSortie'];
         $duration=$_POST['duration'];
         $imageFilm=$_POST['imageFilm'];
-        $stmt = $this->getPdo()->prepare("INSERT INTO movies (title, synopsis, date, duration) VALUES ('$title', '$synopsis', '$date', '$duration')");
+        $videoFilm = $_POST['videoFilm'];
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies (title, synopsis, date, duration, video) VALUES ('$title', '$synopsis', '$date', '$duration', '$videoFilm')");
         $stmt->execute();
         $stmt->fetch();
         $lastId = intval($this->getPdo()->lastInsertId());
@@ -81,12 +82,37 @@ class FilmsModele extends SQL
         return header('location: /films');
     }
 
-    public function getByFilmId($filmId): Film{
+    public function addComments($id){
+        $lastNameComments=$_POST['lastNameComments'];
+        $firstNameComments=$_POST['firstNameComments'];
+        $comments=$_POST['comments'];
+
+        $stmt = $this->getPdo()->prepare("INSERT INTO comments (id_movie, firstname, lastname, description) VALUES ('$id', '$firstNameComments', '$lastNameComments', '$comments')");
+        $stmt->execute();
+        $stmt->fetch();
+
+        return header('location: /films/' . $id);
+    }
+
+
+    public function getByFilmId($filmId): array
+    {
+
         $query = "SELECT * FROM movies WHERE id = ?";
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute([$filmId]);
-        $stmt->setFetchMode(\PDO::FETCH_CLASS, Film::class);
-        return $stmt->fetch();
+
+        $query2 = "SELECT * FROM comments WHERE id_movie = ?";
+        $stmt2 = SQL::getPdo()->prepare($query2);
+        $stmt2->execute([$filmId]);
+
+
+        $arrayComments = [
+            $stmt->fetchAll(\PDO::FETCH_CLASS, Film::class),
+            $stmt2->fetchAll()
+        ];
+
+        return $arrayComments;
     }
 
     public function removeFilm($id){

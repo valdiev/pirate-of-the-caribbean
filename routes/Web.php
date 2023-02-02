@@ -33,6 +33,8 @@ class Web
         Route::Add('/films/ajouter', [$film, 'ajouterFilm']);
         Route::Add('/films/runAjouterFilm', [$film, 'runAjouterFilm']);
         Route::Add('/films/remove/{id}', [$film, 'removeFilm']);
+        Route::Add('/films/comments/{id}/runComments', [$film, 'runComments']);
+        Route::Add('/films/comments/{id}', [$film, 'comments']);
         Route::Add('/films/edit/{id}/runEditFilm', [$film, 'runEditFilm']);
         Route::Add('/films/edit/{id}', [$film, 'editFilm']);
         Route::Add('/films/{id}', [$film, 'film']);

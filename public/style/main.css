@@ -577,20 +577,32 @@ body.films {
     opacity: 0.8;
   }
 }
-#single__film {
+.single__film {
   background-color: rgb(30, 30, 30);
 }
-#single__film .single__film {
+.single__film__btn {
+  position: fixed;
+  left: 50px;
+  top: 70px;
+  z-index: 101;
+}
+.single__film__btn a {
+  font-family: "Pices of Eight", sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+.single__film .single__film {
   margin-bottom: 8rem;
 }
-#single__film .single__film-video {
+.single__film .single__film-video {
   height: 450px;
   width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 10;
 }
-#single__film .single__film-video #ytplayer {
+.single__film .single__film-video #ytplayer {
   pointer-events: none;
   border: 0px;
   width: 100%;
@@ -599,22 +611,44 @@ body.films {
   top: 50%;
   transform: translateY(-50%);
 }
-#single__film .single__film-content {
+.single__film .single__film-content {
   color: #fff;
   position: relative;
   z-index: 20;
   padding: 0 50px;
 }
-#single__film .single__film-content h3 {
+.single__film .single__film-content h3 {
   font-size: 6vw;
   text-align: center;
   transform: translateY(-50%);
   font-family: "Pices of Eight", sans-serif;
 }
-#single__film .related__films {
+.single__film .comments {
   padding: 0 50px 50px;
 }
-#single__film .related__films h1 {
+.single__film .comments h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.single__film .comments a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+.single__film .comments ul {
+  margin-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.single__film .comments ul li {
+  color: #FFF;
+}
+.single__film .related__films {
+  padding: 0 50px 50px;
+}
+.single__film .related__films h1 {
   color: #fff;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -734,60 +768,6 @@ body.login #login__content-form form input:last-of-type {
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
-}
-
-.movies {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-.movies_card {
-  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
-  flex: 0 0 30%;
-  position: relative;
-}
-.movies_card a {
-  text-decoration: none;
-}
-.movies_card_image {
-  position: relative;
-  padding-top: 134%;
-}
-.movies_card_image img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-  object-position: center;
-}
-.movies_card_info {
-  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
-  position: absolute;
-  top: 0;
-  padding: 0 15px;
-  height: 100%;
-  inset: 0;
-  overflow-y: auto;
-  opacity: 0;
-  transition: 0.5s all ease;
-  padding: 2rem;
-}
-.movies_card_info h3 {
-  color: white;
-  font-size: 2.5rem;
-}
-.movies_card_info p {
-  color: white;
-  font-size: 1.5rem;
-}
-.movies_card_info a {
-  color: white;
-  font-size: 1.5rem;
-}
-.movies_card:hover .movies_card_info {
-  opacity: 1;
-  transition: 0.5s all ease;
 }
 
 .formAddActor {
@@ -1133,4 +1113,131 @@ body.login #login__content-form form input:last-of-type {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.movies_card {
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  flex: 0 0 30%;
+  position: relative;
+}
+.movies_card a {
+  text-decoration: none;
+}
+.movies_card_image {
+  position: relative;
+  padding-top: 134%;
+}
+.movies_card_image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.movies_card_info {
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
+  position: absolute;
+  top: 0;
+  padding: 0 15px;
+  height: 100%;
+  inset: 0;
+  overflow-y: auto;
+  opacity: 0;
+  transition: 0.5s all ease;
+  padding: 2rem;
+}
+.movies_card_info h3 {
+  color: white;
+  font-size: 2.5rem;
+}
+.movies_card_info p {
+  color: white;
+  font-size: 1.5rem;
+}
+.movies_card_info a {
+  color: white;
+  font-size: 1.5rem;
+}
+.movies_card:hover .movies_card_info {
+  opacity: 1;
+  transition: 0.5s all ease;
+}
+
+.comments_form {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comments_form_image {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.comments_form_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.comments_form_form {
+  height: fit-content;
+  width: 500px;
+  max-width: 80%;
+  margin-inline: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  position: relative;
+}
+.comments_form_form h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 80%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+.comments_form_form form {
+  text-align: center;
+  width: 90%;
+  margin-inline: auto;
+}
+.comments_form_form form label {
+  display: block;
+  font-size: 1.4rem;
+}
+.comments_form_form form textarea {
+  width: 100%;
+}
+.comments_form_form form input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.comments_form_form form .mainCharacter {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.comments_form_form form .mainCharacter input {
+  flex: 0 0 10%;
+}
+.comments_form_form form .form_films {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.comments_form_form form .form_films_item {
+  display: flex;
+  gap: 1rem;
+}
+.comments_form_form form .form_films_item input {
+  flex: 0 0 10%;
 }
