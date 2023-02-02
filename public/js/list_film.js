@@ -11,4 +11,15 @@ function scrollToSlide() {
     }
 }
 
+function menu() {
+    let burgerBtn = document.querySelector(".header_burger-btn");
+    let menu = document.querySelector(".header_menu");
+
+    burgerBtn.addEventListener('click', () => {
+        burgerBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
+}
+
 scrollToSlide();
+menu();

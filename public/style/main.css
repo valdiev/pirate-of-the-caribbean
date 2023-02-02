@@ -583,6 +583,7 @@ body.films {
   inset: 0;
   width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: fit-content;
   padding: 10px 50px;
@@ -595,6 +596,28 @@ body.films {
 .header_logo a h1 {
   font-family: "Pices of Eight", sans-serif;
   font-size: 3rem;
+}
+@media screen and (max-width: 1023.99px) {
+  .header_menu {
+    position: fixed;
+    height: 100vh;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    max-width: 320px;
+    width: 100%;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+  .header_menu.active {
+    transform: translateX(0);
+  }
+  .header_menu .menu {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
 }
 .header_menu .menu {
   display: flex;
@@ -609,6 +632,39 @@ body.films {
   font-family: "Pices of Eight", sans-serif;
   color: white;
   font-size: 2.5rem;
+}
+.header_burger-btn {
+  width: 22px;
+  height: 12px;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .header_burger-btn {
+    display: none;
+  }
+}
+.header_burger-btn.active span:first-child {
+  transform: rotate(45deg);
+  top: 5px;
+}
+.header_burger-btn.active span:last-of-type {
+  transform: rotate(-45deg);
+  bottom: 5px;
+}
+.header_burger-btn span {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 1px;
+  display: block;
+  position: absolute;
+  transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+}
+.header_burger-btn span:first-child {
+  top: 0;
+}
+.header_burger-btn span:last-child {
+  bottom: 0;
 }
 
 body.login {
