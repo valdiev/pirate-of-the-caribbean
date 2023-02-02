@@ -70,6 +70,69 @@ body.films {
       font-size: 3rem;
       font-family: "Poppins", sans-serif;
     }
+<<<<<<< HEAD
+=======
+    .movies {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      &_card {
+        box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+        flex: 0 0 calc(100% - 3rem);
+        position: relative;
+        
+        @media screen and (min-width: 768px) and (max-width: 1023.99px) {
+          flex: 0 0 calc(50% - 3rem);
+        }
+
+        @media screen and (min-width: 1024px) {
+          flex: 0 0 calc(33% - 3rem);
+        }
+
+        &_image {
+          img {
+            width: 100%;
+          }
+        }
+        &_info {
+          background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(26, 29, 41, 0.1) 0%, rgba(26, 29, 41, 1) 100%);
+          position: absolute;
+          top: 50%;
+          padding: 0 15px;
+          height: 100%;
+          inset: 0;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          overflow: hidden;
+          opacity: 0;
+          transition: 0.5s all ease;
+          h3 {
+            color: white;
+            font-size: 2.5rem;
+          }
+          p {
+            color: white;
+            font-size: 1.5rem;
+          }
+          a {
+            color: white;
+            font-size: 1.5rem;
+          }
+        }
+        &:hover {
+          .movies_card {
+            &_info {
+              opacity: 1;
+              transition: 0.5s all ease;
+            }
+          }
+        }
+      }
+    }
+>>>>>>> responsive-v
   }
 }
 

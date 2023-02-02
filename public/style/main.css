@@ -46,24 +46,53 @@
 .homepage_main {
   position: fixed;
   z-index: 2;
-  bottom: 5rem;
-  width: 120vw;
-  margin: 0 auto;
-  left: 5vw;
-  padding: 50px 0;
-  animation: scrollHomeMain 1s linear;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 1024px) {
+  .homepage_main {
+    top: unset;
+    bottom: 5rem;
+    width: 120vw;
+    margin: 0 auto;
+    left: 5vw;
+    padding: 50px 0;
+    animation: scrollHomeMain 1s linear;
+    transform: unset;
+  }
 }
 .homepage_main_container {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  padding: 20px;
+}
+.homepage_main_container hr {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .homepage_main_container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+  }
+  .homepage_main_container hr {
+    display: block;
+  }
 }
 .homepage_main_container .list_items {
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.homepage_main_container .list_items:not(:last-of-type) {
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 1024px) {
+  .homepage_main_container .list_items:not(:last-of-type) {
+    margin-bottom: 0;
+  }
 }
 .homepage_main_container .list_items h2 {
   font-family: "Pices of Eight", sans-serif;
@@ -86,6 +115,7 @@
 }
 .homepage_main .background {
   position: absolute;
+  z-index: -1;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -159,10 +189,15 @@
   color: white;
 }
 .listActors_slider .slider .actors {
-  padding: 15rem;
+  padding: 2rem;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
+}
+@media screen and (min-width: 1024px) {
+  .listActors_slider .slider .actors {
+    padding: 15rem;
+  }
 }
 .listActors_slider .slider .actors_name {
   -webkit-transition: opacity 800ms, -webkit-transform 800ms;
@@ -470,6 +505,61 @@ body.films {
   margin-bottom: 5rem;
   font-size: 3rem;
   font-family: "Poppins", sans-serif;
+}
+.listFilm_movies .movies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+.listFilm_movies .movies_card {
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  flex: 0 0 calc(100% - 3rem);
+  position: relative;
+}
+@media screen and (min-width: 768px) and (max-width: 1023.99px) {
+  .listFilm_movies .movies_card {
+    flex: 0 0 calc(50% - 3rem);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .listFilm_movies .movies_card {
+    flex: 0 0 calc(33% - 3rem);
+  }
+}
+.listFilm_movies .movies_card_image img {
+  width: 100%;
+}
+.listFilm_movies .movies_card_info {
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(26, 29, 41, 0.1) 0%, rgb(26, 29, 41) 100%);
+  position: absolute;
+  top: 50%;
+  padding: 0 15px;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+.listFilm_movies .movies_card_info h3 {
+  color: white;
+  font-size: 2.5rem;
+}
+.listFilm_movies .movies_card_info p {
+  color: white;
+  font-size: 1.5rem;
+}
+.listFilm_movies .movies_card_info a {
+  color: white;
+  font-size: 1.5rem;
+}
+.listFilm_movies .movies_card:hover .movies_card_info {
+  opacity: 1;
+  transition: 0.5s all ease;
 }
 
 :root * {
