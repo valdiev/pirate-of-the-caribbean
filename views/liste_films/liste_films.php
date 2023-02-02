@@ -18,23 +18,23 @@
         <h2>Films</h2>
         <div class="movies">
             <?php
+            // var_dump($relatedFilms);
             foreach ($films as $key=>$f) {?>
                 <article class="movies_card">
-                    <div class="movies_card_image">
-                        <?php
+                    <a href="/films/<?= $f->getId() ?>">
+                        <div class="movies_card_image">
+                            <?php
                         if(isset($image[$key]->url)){?>
                             <img src="<?= $image[$key]->url?>" alt="">
-                        <?php }
+                            <?php }
                         ?>
-                    </div>
-                    <div class="movies_card_info">
-                        <h3><?= $f->generalInfo() ?></h3>
-                        <p>Date de sortie : <?= $f->getDate() ?></p>
-                        <p class="small"><?= $f->getSynopsis() ?></p>
-
-                        <a href="/films/<?= $f->getId() ?>">En savoir plus</a>
-
-                    </div>
+                        </div>
+                        <div class="movies_card_info">
+                            <h3><?= $f->generalInfo() ?></h3>
+                            <p>Date de sortie : <?= $f->getDate() ?></p>
+                            <p class="small"><?= $f->getSynopsis() ?></p>                            
+                        </div>
+                    </a>
                 </article>
             <?php } ?>
         </div>

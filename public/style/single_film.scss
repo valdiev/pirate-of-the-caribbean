@@ -1,0 +1,47 @@
+#single__film {
+    background-color: rgb(30, 30, 30);
+
+    .single__film {
+        margin-bottom: 8rem;
+        &-video {
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+
+            #ytplayer {
+                pointer-events: none;
+                border: 0px;
+                width: 100%;
+                height: 130%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &-content {
+            color: #fff;
+            position: relative;
+            z-index: 20;
+            padding: 0 50px;
+
+            h3 {
+                font-size: 6vw;
+                text-align: center;
+                transform: translateY(-50%);
+                font-family: "Pices of Eight", sans-serif;
+            }
+        }
+
+    }
+    .related__films {
+        padding: 0 50px 50px;
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
