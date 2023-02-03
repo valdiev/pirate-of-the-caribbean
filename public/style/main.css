@@ -275,6 +275,12 @@
 .listActors_slider .slide13 {
   left: 1200%;
 }
+.listActors_slider .slide14 {
+  left: 1300%;
+}
+.listActors_slider .slide15 {
+  left: 1400%;
+}
 .listActors_slider .control {
   position: absolute;
   top: 50%;
@@ -332,7 +338,12 @@
 .listActors_slider .slide-radio11:checked ~ .next .numb12,
 .listActors_slider .slide-radio12:checked ~ .previous .numb11,
 .listActors_slider .slide-radio12:checked ~ .next .numb13,
-.listActors_slider .slide-radio13:checked ~ .previous .numb12 {
+.listActors_slider .slide-radio13:checked ~ .previous .numb12,
+.listActors_slider .slide-radio13:checked ~ .next .numb14,
+.listActors_slider .slide-radio14:checked ~ .previous .numb13,
+.listActors_slider .slide-radio14:checked ~ .next .numb15,
+.listActors_slider .slide-radio14:checked ~ .previous .numb14,
+.listActors_slider .slide-radio14:checked ~ .next .numb16 {
   display: block;
   z-index: 1;
 }
@@ -388,6 +399,14 @@
   -webkit-transform: translateX(-1200%);
   transform: translateX(-1200%);
 }
+.listActors_slider .slide-radio14:checked ~ .slider {
+  -webkit-transform: translateX(-1300%);
+  transform: translateX(-1300%);
+}
+.listActors_slider .slide-radio15:checked ~ .slider {
+  -webkit-transform: translateX(-1400%);
+  transform: translateX(-1400%);
+}
 .listActors_slider .slide-radio1:checked ~ .slide1 .actors_name,
 .listActors_slider .slide-radio1:checked ~ .slide1 .actors_films,
 .listActors_slider .slide-radio1:checked ~ .slide1 .button,
@@ -426,7 +445,13 @@
 .listActors_slider .slide-radio12:checked ~ .slide12 .button,
 .listActors_slider .slide-radio13:checked ~ .slide13 .actors_name,
 .listActors_slider .slide-radio13:checked ~ .slide13 .actors_films,
-.listActors_slider .slide-radio13:checked ~ .slide13 .button {
+.listActors_slider .slide-radio13:checked ~ .slide13 .button,
+.listActors_slider .slide-radio14:checked ~ .slide14 .actors_name,
+.listActors_slider .slide-radio14:checked ~ .slide14 .actors_films,
+.listActors_slider .slide-radio14:checked ~ .slide14 .button,
+.listActors_slider .slide-radio15:checked ~ .slide15 .actors_name,
+.listActors_slider .slide-radio15:checked ~ .slide15 .actors_films,
+.listActors_slider .slide-radio15:checked ~ .slide15 .button {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   opacity: 1;
@@ -1173,8 +1198,18 @@ body.login #login__content-form form input:last-of-type {
 
 .movies {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 3rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1023.99px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .movies_card {
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
